@@ -1,5 +1,6 @@
 package com.example.work.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,9 +19,20 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "password")
     private String password;
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 
     public Long getId() {
         return id;

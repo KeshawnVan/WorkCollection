@@ -31,7 +31,8 @@ public class EmployeeController {
 
     @ResponseBody
     @RequestMapping("/find")
-    public Employee findById(@RequestParam("id") Long id) {
-        return employeeRepository.getOne(id);
+    public String findById(@RequestParam("id") Long id) {
+        Employee employee = employeeRepository.getOne(id);
+        return employee.toString();
     }
 }
